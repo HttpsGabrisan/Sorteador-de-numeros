@@ -5,6 +5,10 @@ function sortear() {
 
     let sorteados = [];
     let numero;
+    if (de > ate){
+        alert('ERRO: O número minimo é maior que o máximo!');
+        return;
+    }
 
     for (let i = 0; i < quantidade; i++){
         numero = obterNumeroAleatorio(de, ate);
