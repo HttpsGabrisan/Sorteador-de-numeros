@@ -5,8 +5,16 @@ function sortear() {
 
     let sorteados = [];
     let numero;
-    if (de > ate){
+
+    //Resolve erro de número minimo maior
+    if (de >= ate){
         alert('ERRO: O número minimo é maior que o máximo!');
+        return;
+    }
+
+    //Resolve erro de quantidade maior que intervalo
+    if ((ate - de + 1) < quantidade){
+        alert('ERRO: A quantidade de números é maior que o intervalo selecionado!');
         return;
     }
 
@@ -15,6 +23,9 @@ function sortear() {
 
         while (sorteados.includes(numero)){
             numero = obterNumeroAleatorio(de, ate);
+            if ((ate - de + 1) > quantidade){
+                alert('ERRO: A quantidade de números é maior que o intervalo selecionado!');
+            }
         }
 
         sorteados.push(numero);
